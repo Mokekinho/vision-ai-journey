@@ -1,0 +1,92 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments
+env/
+venv/
+.venv/
+ENV/
+.Python
+python_env/
+pyvenv.cfg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Build / Distribution
+build/
+dist/
+*.egg-info/
+.eggs/
+develop-eggs/
+downloads/
+sdist/
+var/
+*.egg
+.installed.cfg
+
+# PyInstaller
+*.spec
+*.manifest
+
+# Coverage and test
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+# Logs
+*.log
+
+# dotenv
+.env
+
+# IPython / Jupyter
+.ipynb_checkpoints
+
+# Spyder / Rope
+.spyderproject
+.ropeproject
+
+# Editor settings
+*.sublime-workspace
+*.sublime-project
+
+# VSCode
+.vscode/
+
+# JetBrains / PyCharm
+.idea/
+
+# Project-specific files (IntelliJ, etc.)
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+atlassian-ide-plugin.xml
+
+# Django / Flask / Scrapy
+local_settings.py
+instance/
+.webassets-cache
+.scrapy/
+
+# Documentation builds
+docs/_build/
+
+# CMake
+cmake-build-*/
+
+# Others
+pip-selfcheck.json
