@@ -35,11 +35,23 @@ def creating_arrays():
     print(arr)
     print(arr.ndim)
 
+def array_indexing():
 
+    arr = numpy.array([1,2,3,4])
+    print(arr[0]) #equal to other languages
+
+    print(arr[1] + arr [2])
+
+    arr = numpy.array([[1,2], [3,4]])
+    print(arr[0,1]) # que nem coordenada para acessar coisa de matriz
+    print(arr[0][1]) # também da para acessar do jeito tradicional
+
+    print(arr[0][-1]) # -1 representa o ultimo elemento
+    print(arr[0][-2]) #quanto mais o número diminui anda da esquerda para direita
 
 
 if __name__ == '__main__':
-    fun_list = [getting_started, creating_arrays]
+    fun_list = [getting_started, creating_arrays, array_indexing]
 
     for fun in fun_list:
         fun()
