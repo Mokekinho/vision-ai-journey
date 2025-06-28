@@ -69,8 +69,42 @@ def array_slicing():
     print(arr[1:4]) # the last one it is not included
     print(arr[1:])
 
+def data_types():
+    """
+    Data Types in numpy
+
+    i - integer
+    b - boolean
+    u - unsigned integer
+    f - float
+    c - complex float
+    m - timedelta
+    M - datetime
+    O - object
+    S - string
+    U - unicode string
+    V - fixed chunk of memory for other type ( void )
+    """
+
+    arr = numpy.array([1,2,3,4])
+
+    print(arr.dtype) #shows the type of the content of the array
+
+    arr = numpy.array((['avv', 'abb']))
+    print(arr.dtype)
+
+    arr = numpy.array([1,2,3,4], dtype= 'S')
+    print(arr.dtype)
+
+    #converting data type
+    arr = numpy.array([1,2,3,4])
+    new_arr = arr.astype('S') #makes a copy of the array with another type
+
+    print(new_arr)
+    print(new_arr.dtype)
+
 if __name__ == '__main__':
-    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing]
+    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types]
 
     for fun in fun_list:
         fun()
