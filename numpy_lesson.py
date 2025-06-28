@@ -49,9 +49,28 @@ def array_indexing():
     print(arr[0][-1]) # -1 representa o ultimo elemento
     print(arr[0][-2]) #quanto mais o número diminui anda da esquerda para direita
 
+def array_slicing():
+    arr = numpy.array([1,2,3,4,5,6,7,8,9])
+    print(arr[1:5]) #we have a piece of the array, [start:end]
+    print(arr[1:5:2]) # we have a piece of the array that jumps 2, [start:end:step]
+
+    print(arr[2:]) # if we don't pass the end it'll be the end
+    print(arr[:3])
+    print(arr[2::2])
+
+    print(arr[-3:-1])#it's ok to use negatives indexes, it works in the same way
+
+    arr = numpy.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
+
+    print(arr[1, 1:4]) # for 2D arrays
+
+    arr = numpy.array([1,2,3,4,5])
+
+    print(arr[1:4]) # the last one it is not included
+    print(arr[1:])
 
 if __name__ == '__main__':
-    fun_list = [getting_started, creating_arrays, array_indexing]
+    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing]
 
     for fun in fun_list:
         fun()
