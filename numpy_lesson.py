@@ -206,8 +206,19 @@ def array_iterating():
     for idx, x in numpy.ndenumerate(arr):
         print(idx, x)
 
+
+def ufunc_intro():
+
+    #stands for universal functions, it vetorize the array, it is faster than simple interation.
+
+    girl_ages = numpy.array([12,15,17,15,20, 22])
+
+    boy_ages = numpy.array([30,27,20,10,11,45])
+
+    print(numpy.add(girl_ages,boy_ages))
+
 if __name__ == '__main__':
-    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape, reshaping_array, array_iterating]
+    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape, reshaping_array, array_iterating, ufunc_intro]
 
     for fun in fun_list:
         fun()
