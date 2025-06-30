@@ -237,9 +237,31 @@ def create_own_unfunc():
         print('average is not ufunc')
 
 
+def simple_arithmetic_ufunc():
+    #I could use arithmetic operators + - * / directly between NumPy arrays
+
+    x = numpy.array([3,3,3])
+    y = numpy.array([3,2,2])
+
+    print(x + y)
+
+    print(numpy.add(x,y))
+    print(numpy.subtract(y,x))
+    print(numpy.multiply(y,x))
+    print(numpy.divide(x,y))
+    print(numpy.power(x,y))
+
+    print(numpy.remainder(x,y))
+    print(numpy.mod(x,y)) #both remainder and mod returns the mod operation
+
+    print(numpy.divmod(x,y)) #returns to arrays, one it is the quotient and other the results
+
+    x = numpy.array([-1,-1,-10])
+
+    print( numpy.absolute(x))
 
 if __name__ == '__main__':
-    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape, reshaping_array, array_iterating, ufunc_intro, create_own_unfunc]
+    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape, reshaping_array, array_iterating, ufunc_intro, create_own_unfunc, simple_arithmetic_ufunc]
 
     for fun in fun_list:
         fun()
