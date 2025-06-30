@@ -1,4 +1,6 @@
 import numpy #é usado para gerenciar arrays em python, é uma forma mais rápida que as listas, portanto é bom para grandes dados
+import numpy as np
+
 
 #tutorial https://www.w3schools.com/python/numpy/numpy_intro.asp
 
@@ -260,8 +262,31 @@ def simple_arithmetic_ufunc():
 
     print( numpy.absolute(x))
 
+
+def rounding_decimals_ufunc():
+
+    """
+    There are primarily five ways of rounding off decimals in NumPy:
+
+    truncation
+    fix
+    rounding
+    floor
+    ceil
+    """
+
+    arr = numpy.array([-3.1666, 3.6667])
+
+    print(np.trunc(arr))#remove the float part and return the closest number to zero
+    print(np.fix(arr)) #does the same thing of trunc
+
+    print(numpy.around(arr,2)) #the second value it is the number of decimals case the output will have, the function arounds the number to the closest one
+
+    print(numpy.floor(arr))
+    print(numpy.ceil(arr))
+
 if __name__ == '__main__':
-    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape, reshaping_array, array_iterating, ufunc_intro, create_own_unfunc, simple_arithmetic_ufunc]
+    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape, reshaping_array, array_iterating, ufunc_intro, create_own_unfunc, simple_arithmetic_ufunc, rounding_decimals_ufunc]
 
     for fun in fun_list:
         fun()
