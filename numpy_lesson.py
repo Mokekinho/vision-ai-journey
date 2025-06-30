@@ -163,9 +163,51 @@ def reshaping_array():
     Note: There are a lot of functions for changing the shapes of arrays in numpy flatten, ravel and also for rearranging the elements rot90, flip, fliplr, flipud etc. These fall under Intermediate to Advanced section of numpy.
     """
 
+def array_iterating():
+
+    arr = numpy.array([1,2,3,4,5])
+
+    for num in arr:
+        print(num)
+
+    arr = numpy.array([[1,2,3],[4,5,6]])
+
+    for i in arr:
+        print(i)
+
+    for i in arr:
+        for j in i:
+            print(j)
+
+    #at this moment it is the same thing as the other languages
+
+    arr = numpy.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+
+    for x in numpy.nditer(arr): # an easy way to iterate ofer the array
+        print(x)
+
+    arr = numpy.array([1, 2, 3])
+
+    for x in numpy.nditer(arr, flags=['buffered'], op_dtypes=['S']): #op_dtypes changes the type of the element, it is b=necessary tha flag buffer because the function don't change the real value itself
+        print(x)
+
+    arr = numpy.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+
+    for x in numpy.nditer(arr[:, ::2]): #whith diferente steps, it is the combination with slicing
+        print(x)
+
+    arr = numpy.array([1, 2, 3])
+
+    for idx, x in numpy.ndenumerate(arr): #iterates returning the number and the index
+        print(idx, x)
+
+    arr = numpy.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+
+    for idx, x in numpy.ndenumerate(arr):
+        print(idx, x)
 
 if __name__ == '__main__':
-    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape, reshaping_array]
+    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape, reshaping_array, array_iterating]
 
     for fun in fun_list:
         fun()
