@@ -131,9 +131,41 @@ def array_shape():
     print(arr)
     print(arr.shape)
 
+def reshaping_array():
+    arr = numpy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+
+    new_arr = arr.reshape(4, 3) # pass the i value and the j value, so it will  create an array with 4 lines, and 3 columns
+    print(new_arr)
+
+    new_arr = arr.reshape(2, 3, 2)
+
+    print(new_arr)
+
+
+    print(arr.reshape(2, 3, 2).base) #it returns arr because arr is the base of the view of the array arr.reshape()
+
+    new_arr[0,0,0] = 10 # if the new array changes, the old changes too
+    print(arr)
+
+    new_arr = arr.reshape(2, 2, -1) # the numpy will calculate the last one dimension, you can do that for just one dimension
+
+    print(new_arr)
+
+    #THE NUMBER OF THE (I x J x K...) NEED TO BE EQUAL THE NUMBER OF THE ORIGINAL ELEMENTS
+
+    arr = numpy.array([[1, 2, 3], [4, 5, 6]])
+
+    new_arr = arr.reshape(-1) # creates a single line array
+
+    print(new_arr)
+
+    """"
+    Note: There are a lot of functions for changing the shapes of arrays in numpy flatten, ravel and also for rearranging the elements rot90, flip, fliplr, flipud etc. These fall under Intermediate to Advanced section of numpy.
+    """
+
 
 if __name__ == '__main__':
-    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape]
+    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape, reshaping_array]
 
     for fun in fun_list:
         fun()
