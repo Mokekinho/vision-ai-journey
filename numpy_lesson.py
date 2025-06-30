@@ -122,9 +122,18 @@ def copy_as_view():
     print(arr.base) #returns None because arr owns the data
     print(x.base) #returns the arr array because x doesn't own the data
 
+def array_shape():
+    arr = numpy.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+    print(arr.shape) #returns the traditional (i,j), the number of lines, and columns
+
+    arr = numpy.array([1, 2, 3, 4], ndmin=5)
+
+    print(arr)
+    print(arr.shape)
+
 
 if __name__ == '__main__':
-    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view]
+    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape]
 
     for fun in fun_list:
         fun()
