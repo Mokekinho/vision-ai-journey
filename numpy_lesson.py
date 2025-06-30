@@ -103,8 +103,28 @@ def data_types():
     print(new_arr)
     print(new_arr.dtype)
 
+
+def copy_as_view():
+    arr = numpy.array([1,2,3,4])
+    x = arr.copy() #makes a copy of the array, copy the content
+
+    arr[0] = 12321
+
+    print(arr)
+    print(x)
+
+    x = arr.view() #copy the reference of the original array
+
+    arr[0] = 3
+    print(arr)
+    print(x)
+
+    print(arr.base) #returns None because arr owns the data
+    print(x.base) #returns the arr array because x doesn't own the data
+
+
 if __name__ == '__main__':
-    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types]
+    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view]
 
     for fun in fun_list:
         fun()
