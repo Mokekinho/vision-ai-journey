@@ -217,8 +217,29 @@ def ufunc_intro():
 
     print(numpy.add(girl_ages,boy_ages))
 
+
+def create_own_unfunc():
+    def average(x,y):
+        return (x+y)/2
+
+    average = numpy.frompyfunc(average, nin = 2 , nout = 1) #nin it is the number of arrays it is necessary for the input, and nout it is the number of arrays that is returned by the function
+
+    girl_ages = numpy.array([12, 15, 17, 15, 20, 22])
+
+    boy_ages = numpy.array([30, 27, 20, 10, 11, 45])
+
+    print(average(girl_ages,boy_ages))
+
+    print(type(average)) # see if it is an ufunc or not
+    if type(average) == numpy.ufunc:
+        print('average is ufunc')
+    else:
+        print('average is not ufunc')
+
+
+
 if __name__ == '__main__':
-    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape, reshaping_array, array_iterating, ufunc_intro]
+    fun_list = [getting_started, creating_arrays, array_indexing, array_slicing, data_types, copy_as_view, array_shape, reshaping_array, array_iterating, ufunc_intro, create_own_unfunc]
 
     for fun in fun_list:
         fun()
