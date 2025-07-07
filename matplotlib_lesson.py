@@ -2,6 +2,8 @@ import matplotlib
 matplotlib.use('Qt5Agg') # uses pyqt to show
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
+
 
 #For this file I'll study matplotlib from https://matplotlib.org/stable/tutorials/index.html
 
@@ -64,7 +66,40 @@ def plot_style():
     plt.show()
 
 
+def keyword_strings():
+    data = {'a': np.arange(50), # Eixo X
+            'c': np.random.randint(0, 50, 50), # 50 Cores dos pontos
+            'd': np.random.randn(50)} # tamanho das bolinhas
+    data['b'] = data['a'] + 10 * np.random.randn(50) # eixo Y
+    data['d'] = np.abs(data['d']) * 100
+    #Fois criado uma variedade de arrays
+
+
+    #plot é grafico de linhas e o scatter é grafico de dispersão
+    plt.scatter('a', 'b', c='c', s='d', data=data) # ao passar data = data é o mesmo que fazer plt.scatter(data['a'], data['b'], c=data['c'], s=data['d'])
+    plt.xlabel('entry a')
+    plt.ylabel('entry b')
+
+
+    #usando pandas
+
+    df = pd.DataFrame({
+        'a': np.arange(50),
+        'c': np.random.randint(0, 50, 50),
+        'd': np.abs(np.random.randn(50)) * 100
+    })
+
+    # Coluna 'b' com ruído
+    df['b'] = df['a'] + 10 * np.random.randn(50)
+
+    # Plotando
+    plt.scatter('a', 'b', c='c', s='d', data=df)
+    plt.xlabel('entry a')
+    plt.ylabel('entry b')
+    plt.title('Gráfico de dispersão com pandas')
+    plt.show()
+
 
 if __name__ == '__main__':
     print(matplotlib.__version__)
-    plot_style()
+    keyword_strings()
