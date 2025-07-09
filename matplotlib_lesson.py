@@ -103,3 +103,25 @@ def keyword_strings():
 if __name__ == '__main__':
     print(matplotlib.__version__)
     keyword_strings()
+
+
+"""
+Principais funções, irei partir para um projeto pratico logo
+| Função                             | O que faz                                 |
+| ---------------------------------- | ----------------------------------------- |
+| `plt.plot()`                       | Cria gráficos de linha                    |
+| `plt.scatter()`                    | Gráficos de dispersão (pontos)            |
+| `plt.bar()`                        | Barras verticais                          |
+| `plt.hist()`                       | Histogramas (frequência de valores)       |
+| `plt.imshow()`                     | Mostra imagens (útil com `OpenCV` depois) |
+| `plt.title()`                      | Título do gráfico                         |
+| `plt.xlabel()` / `ylabel()`        | Nomeia os eixos                           |
+| `plt.legend()`                     | Adiciona legenda                          |
+| `plt.grid()`                       | Mostra grade no gráfico                   |
+| `plt.subplot()` / `plt.subplots()` | Cria múltiplos gráficos numa mesma figura |
+| `plt.savefig()`                    | Salva o gráfico como imagem               |
+| `plt.show()`                       | Exibe o gráfico na tela                   |
+| `plt.clf()`                        | Limpa a figura atual                      |
+
+
+"""
