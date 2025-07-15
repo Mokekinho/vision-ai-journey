@@ -1,6 +1,4 @@
 import cv2 as cv
-from numpy.f2py.auxfuncs import istrue
-
 
 def basics():
 
@@ -31,9 +29,31 @@ def reading_videos():
     video.release()
     cv.destroyAllWindows()
 
+def resize_rescale():
+    def rescale(frame, scale = 0.75): #get a frame/image and scale it, by default 75%.
+        #Images, videos, live videos.
+        width = int(frame.shape[1] * scale)
+        height = int (frame.shape[0] * scale)
+        dimensions = (width,height)
+
+        return cv.resize(frame,dimensions,interpolation=cv.INTER_AREA) #this function resize the frame to one dimension, the interpolation is the method used to take of frames
+
+    def change_res(frame,width,height):
+        frame.set(3,width) # this number represent the ID for the width, this function has many ids to change
+        frame.set(4, height)
+
+
+    img = cv.imread("assets/images/eu.jpeg")
+
+    img = rescale(img,0.3)
+
+    cv.imshow('rescaled img', img)
+    k = cv.waitKey(0)
+
 
 
 if __name__ == "__main__":
     print(cv.__version__)
 
-    reading_videos()
+    basics()
+    resize_rescale()
